@@ -1,7 +1,6 @@
 
 import java.util.Scanner;
 
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -30,15 +29,18 @@ public class Main {
                     System.out.print("Informe o salário: R$");
                     double salary = scanner.nextDouble();
 
+                    // Criar um novo empregado e adicioná-lo à lista
                     Employee employee = new Employee(name, gender, cpf, birthDate, salary);
                     employeeController.addEmployee(employee);
                     break;
                 case 2:
+                    // Imprimir todos os empregados na lista
                     employeeController.printAllEmployees();
                     break;
                 case 3:
                     System.out.print("Informe o nome do empregado a ser consultado: ");
                     String searchName = scanner.nextLine();
+                    // Encontrar e exibir o empregado pelo nome
                     Employee foundByName = employeeController.findEmployeeByName(searchName);
                     if (foundByName != null) {
                         System.out.println("Empregado encontrado: " + foundByName);
@@ -49,6 +51,7 @@ public class Main {
                 case 4:
                     System.out.print("Informe o CPF do empregado a ser consultado: ");
                     String searchCpf = scanner.nextLine();
+                    // Encontrar e exibir o empregado pelo CPF
                     Employee foundByCpf = employeeController.findEmployeeByCpf(searchCpf);
                     if (foundByCpf != null) {
                         System.out.println("Empregado encontrado: " + foundByCpf);
